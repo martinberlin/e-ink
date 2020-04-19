@@ -4,7 +4,9 @@
 
 1. Make configuration simpler
 2. Add a way to configure the library without touching the .pio/libdeps folder itself
-3. Explain briefly and to the point the steps to get it running (In a human way and not like the original library did)
+3. Explain briefly and to the point the steps to get it running
+
+This fork is inteded to be used as a library in Platformio projects.
 
 ## Configuring this using build_flags using Platformio
 
