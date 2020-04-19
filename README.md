@@ -12,7 +12,8 @@ Let's try to make a modern configuration without touching the library, but just 
 
 This is an example platformio.ini file for ESP32 but it can be used for ESP8266. Just copy and modify it for your project:
 
-    ; Please visit documentation for the other options and examples https://docs.platformio.org/page/projectconf.html
+    ; Please visit documentation for the other options and examples:
+    ; https://docs.platformio.org/page/projectconf.html
     [platformio]
     ; espressif8266  OR  lolin_d32
     default_envs = lolin_d32 
@@ -37,6 +38,8 @@ Please note that the display I used to test is: USE_154_BW_GREEN
 Replace that for your own model to fit your needs. Make sure that the build variables need a value when are inserted like this so even if it should be empty use:
 
 -DMYDEFINE=1
+
+NOTE: In the file [select.h](https://github.com/martinberlin/e-ink/blob/master/src/select.h#L25) I noticed that there was an #if construction that was not letting my use my 1.54 display so I modified it and removed the part that was flawed, leaving it on the comments. If you use one of the displays that where left out, just arrange it to use the right Display_picture function or leave me a message and I will try to correct it. ( twitter: @martinfasani / www.cale.es )
 
 ## Contents
 
