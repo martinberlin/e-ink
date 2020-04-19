@@ -5,29 +5,14 @@
 #include <SPI.h>
 #include "imagedata.h"
 
-#if defined( ESP32 )
+// ESP32 config example, please do not set it here but using build_flags like explained in the README file
 // Pin definition
-#define RST_PIN         16
-#define DC_PIN          22
-#define CS_PIN          18
-#define BUSY_PIN        23
-#define CLK_PIN         5
-#define SDI_PIN         27
-
-#elif defined( AVR )
-#define RST_PIN         8
-#define DC_PIN          9
-#define CS_PIN          10
-#define BUSY_PIN        7
-
-#elif defined( ESP8266 )
-#define RST_PIN         16
-#define DC_PIN          4
-#define CS_PIN          15
-#define BUSY_PIN        5
-#define CLK_PIN         14
-#define SDI_PIN         13
-#endif
+//#define RST_PIN         -1
+//#define DC_PIN          27
+//#define CS_PIN          32
+//#define BUSY_PIN        -1
+//#define CLK_PIN         18
+//#define SDI_PIN         23
 
 class EpdIf {
 public:
