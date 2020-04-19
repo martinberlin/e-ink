@@ -55,7 +55,7 @@ NOTE: In the file [select.h](https://github.com/martinberlin/e-ink/blob/master/s
 --------
 - Arduino library for E-Ink display(1.54, 2.3, 2.9) made by HelTec Automation(TM)
 - Now this library allows three sizes of e-ink to run on the "AVR" , "ESP32" , "ESP8266" development board.
-- **Check the provided platformio.ini configuratiom file and adapt it to your needs**
+- **Check the provided platformio.ini configuration file and adapt it to your needs**
 
 ## Installing
 
