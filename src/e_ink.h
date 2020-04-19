@@ -7,6 +7,10 @@
 #include <SPI.h>
 #include "imagedata.h"
 #include "../examples/e_ink/set_inch.h"
+
+// Please define this using build_flags and not here!
+// https://docs.platformio.org/en/latest/projectconf/section_env_build.html
+
  //#define USE_290_BWSoft  
         /* USE_154_BW_GREEN, USE_154_BW_BLUE, USE_154_BWY, USE_154_BWR_152, 
            USE_213_BW, USE_213_BWSoft, USE_213_BWR, USE_213_BWY, 
