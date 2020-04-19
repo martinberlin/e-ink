@@ -6,7 +6,9 @@
 #include <Wire.h>
 #include <SPI.h>
 #include "imagedata.h"
-#include "../examples/e_ink/set_inch.h"
+
+// Heltec: Why for gods sake? Including an example part in the library... that does not compile? Let's take it out:
+//#include "../examples/e_ink/set_inch.h"
 
 // Please define this using build_flags and not here!
 // https://docs.platformio.org/en/latest/projectconf/section_env_build.html
