@@ -43,7 +43,7 @@ Replace that for your own model to fit your needs. Make sure that the build vari
 
 For ESP8266 just change the default_envs to the board you use and find out what GPIOs are the right ones. Do not use D8 and so on defines! This is a bad way to refence the GPIO numbers and wont work like this in build_flags, check your ESP8266 board documentation and use the GPIO number itself. On ESP32 the default MOSI pin is 23 and the CLOCK pin is on 18. RST and BUSY are -1 since they don't seem to do anything (BUSY is on some Einks but in this case I tried to use it wired/unwired and does not make any difference)
 
-NOTE: In the file [select.h](https://github.com/martinberlin/e-ink-platformio/blob/master/src/select.h#L25) I noticed that there was an #if construction that was not letting my use my 1.54 display so I modified it and removed the part that was flawed, leaving it on the comments. If you use one of the displays that where left out, just arrange it to use the right Display_picture function or leave me a message and I will try to correct it. ( twitter: @martinfasani / www.cale.es )
+Contact. Twitter: @martinfasani / www.cale.es
 
 ## Contents
 
