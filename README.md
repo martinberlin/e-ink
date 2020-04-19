@@ -1,10 +1,42 @@
 # Fork of original Heltec library
 
-**With the mission to: **
+**With the mission to:**
 
 1. Make configuration simpler
 2. Add a way to configure the library without touching the .pio/libdeps folder itself
 3. Explain briefly and to the point the steps to get it running (In a human way and not like the original library did)
+
+## Configuring this using build_flags using Platformio
+
+Let's try to make a modern configuration without touching the library, but just using build flags that are inserted as #define in the build process. Just as a reference, in the original includes I left commented the #define statements: [PIN config epdif.h](https://github.com/martinberlin/e-ink/blob/master/src/epdif.h) & [Display model eink.h](https://github.com/martinberlin/e-ink/blob/master/src/e_ink.h)
+
+This is an example platformio.ini file for ESP32 but it can be used for ESP8266. Just copy and modify it for your project:
+
+    ; Please visit documentation for the other options and examples https://docs.platformio.org/page/projectconf.html
+    [platformio]
+    ; espressif8266  OR  lolin_d32
+    default_envs = lolin_d32 
+    [env:lolin_d32]
+    platform = https://github.com/platformio/platform-espressif32.git
+    board = lolin_d32
+    framework = arduino
+    monitor_speed = 115200
+    build_flags =
+      -DUSE_154_BW_GREEN=1
+      -DRST_PIN=-1
+      -DDC_PIN=27
+      -DCS_PIN=32
+      -DBUSY_PIN=-1
+      -DCLK_PIN=18
+      -DSDI_PIN=23
+    
+    lib_deps =
+       https://github.com/martinberlin/e-ink.git
+
+Please note that the display I used to test is: USE_154_BW_GREEN
+Replace that for your own model to fit your needs. Make sure that the build variables need a value when are inserted like this so even if it should be empty use:
+
+-DMYDEFINE=1
 
 ## Contents
 
