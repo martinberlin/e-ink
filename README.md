@@ -14,27 +14,29 @@ Let's try to make a modern configuration without touching the library, but just 
 
 This is an example platformio.ini file for ESP32 but it can be used for ESP8266. Just copy and modify it for your project:
 
-    ; Please visit documentation for the other options and examples:
-    ; https://docs.platformio.org/page/projectconf.html
-    [platformio]
-    ; espressif8266  OR  lolin_d32
-    default_envs = lolin_d32 
-    [env:lolin_d32]
-    platform = https://github.com/platformio/platform-espressif32.git
-    board = lolin_d32
-    framework = arduino
-    monitor_speed = 115200
-    build_flags =
-      -DUSE_154_BW_GREEN=1
-      -DDC_PIN=27
-      -DCS_PIN=32
-      -DCLK_PIN=18
-      -DSDI_PIN=23
-      -DRST_PIN=-1
-      -DBUSY_PIN=-1
-    
-    lib_deps =
-       https://github.com/martinberlin/e-ink-platformio.git
+```
+; Please visit documentation for the other options and examples:
+; https://docs.platformio.org/page/projectconf.html
+[platformio]
+; espressif8266  OR  esp32
+default_envs = esp32 
+[env:esp32]
+platform = https://github.com/platformio/platform-espressif32.git
+board = lolin_d32
+framework = arduino
+monitor_speed = 115200
+build_flags =
+  -D USE_154_BW_GREEN=1
+  -D DC_PIN=5
+  -D CS_PIN=21
+  -D CLK_PIN=18
+  -D SDI_PIN=23
+  -D RST_PIN=-1
+  -D BUSY_PIN=22
+
+lib_deps =
+   https://github.com/martinberlin/e-ink-platformio.git
+```
 
 Please note that the display I used to test is: USE_154_BW_GREEN
 Replace that for your own model to fit your needs. Make sure that the build variables need a value when are inserted like this so even if it should be empty use:
